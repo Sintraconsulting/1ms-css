@@ -12,8 +12,9 @@
   }
   
   if(document.querySelector('.category-product')) {
-    let heading = document.querySelector('.category-product h3');
-    heading.innerHTML = heading.innerHTML.replace(heading.textContent.split('-').pop(), `<span class="second-part">${secondPart}</span>`);
+    let heading = document.querySelector('.category-product h3'),
+        modifiedPart = heading.textContent.split('-').pop();
+    heading.innerHTML = heading.innerHTML.replace(modifiedPart, `<span class="second-part">${modifiedPart}</span>`);
   }
   
   //Set target attribute
