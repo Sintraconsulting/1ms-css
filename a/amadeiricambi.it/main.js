@@ -11,4 +11,12 @@
     }
   }
   
+  //Set target attribute
+  if(document.querySelector('.product-item a')) {
+    let productHrefs = document.querySelectorAll('.product-item a');
+
+    for(var i = 0; i < productHrefs.length; i++) {
+      productHrefs[i].setAttribute('target', '_blank');
+    }
+  }
 })()
