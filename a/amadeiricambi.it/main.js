@@ -11,6 +11,11 @@
     }
   }
   
+  if(document.querySelector('.category-product')) {
+    let heading = document.querySelector('.category-product h3');
+    heading.innerHTML = heading.innerHTML.replace(heading.textContent.split('-').pop(), `<span class="second-part">${secondPart}</span>`);
+  }
+  
   //Set target attribute
   if(document.querySelector('.product-item a')) {
     let productHrefs = document.querySelectorAll('.product-item a');
