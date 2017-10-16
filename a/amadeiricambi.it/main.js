@@ -30,9 +30,12 @@
   //Add back button on product page
   if(document.querySelector('body.ecommerce-product-page')) {
     let backElem = document.createElement('a'),
-        backElemNode = document.createTextNode('Back');
+        backElemNode = document.createTextNode('Precedente pagina'),
+        currentSite = window.location.href,
+        backToReplace = currentSite.split('/').pop(),
+        backReplaced = currentSite.replace(`/${backToReplace}`, '.html');
 
-    backElem.setAttribute('href', document.referrer);
+    backElem.setAttribute('href', backReplaced);
     backElem.classList.add('btn-back');
     backElem.appendChild(backElemNode);
     document.querySelector('#page_title').appendChild(backElem);
