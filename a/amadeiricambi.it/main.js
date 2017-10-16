@@ -14,6 +14,7 @@
   if(document.querySelector('.category-product')) {
     let heading = document.querySelector('.category-product h3'),
         modifiedPart = heading.textContent.split('-').pop();
+    
     heading.innerHTML = heading.innerHTML.replace(modifiedPart, `<span class="second-part">${modifiedPart}</span>`);
   }
   
@@ -25,4 +26,16 @@
       productHrefs[i].setAttribute('target', '_blank');
     }
   }
+  
+  //Add back button on product page
+  if(document.querySelector('body.ecommerce-product-page')) {
+    let backElem = document.createElement('a'),
+        backElemNode = document.createTextNode('Back');
+
+    backElem.setAttribute('href', document.referrer);
+    backElem.classList.add('btn-back');
+    backElem.appendChild(backElemNode);
+    document.querySelector('#page_title').appendChild(backElem);
+  }
+  
 })()
